@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Projeto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .code-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            overflow: auto;
+            font-size: 0.95em;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Meu Projeto</h1>
+    
+    <h2>Introdução</h2>
+    <p>
+        Este projeto é um exemplo simples de como criar uma página HTML com uma seção de vídeo, texto e código.
+        Você pode clonar este repositório e usar os arquivos em seu editor preferido, como o VS Code.
+    </p>
+    
+    <h2>Vídeo Explicativo</h2>
+    <div class="video-container">
+        <video controls>
+            <source src="caminho-do-seu-video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+    
+    <h2>Código Exemplo</h2>
+    <div class="code-container">
+        <button class="copy-button" onclick="copiarCodigo()">Copiar Código</button>
+        <pre id="codigo-exemplo">
+            <code>
+                // Código de exemplo
+                function olaMundo() {
+                    console.log("Olá, Mundo!");
+                }
+                olaMundo();
+            </code>
+        </pre>
+    </div>
+    
+    <script>
+        function copiarCodigo() {
+            const codigo = document.getElementById("codigo-exemplo").innerText;
+            navigator.clipboard.writeText(codigo).then(() => {
+                alert("Código copiado com sucesso!");
+            }).catch(err => {
+                console.error("Erro ao copiar o código: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
